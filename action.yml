@@ -1,0 +1,20 @@
+name: 'OSS Maintainer Copilot'
+description: 'AI-powered GitHub Action to automate PR code reviews, issue triaging, and release notes for open-source maintainers.'
+author: 'Hanye'
+inputs:
+  github_token:
+    description: 'GitHub token for API access'
+    required: true
+  llm_api_key:
+    description: 'API key for the Language Model (OpenAI/Gemini/DeepSeek)'
+    required: true
+  mode:
+    description: 'Action mode: pr_review, issue_triage, or release_notes'
+    required: true
+    default: 'pr_review'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'git-merge'
+  color: 'blue'
